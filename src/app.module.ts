@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HealthCheckModule } from './modules/health-check/health-check.module';
 import config from './config';
 
 @Module({
@@ -10,6 +11,7 @@ import config from './config';
       useFactory: (config: ConfigService) => config.get('database-main'),
       inject: [ConfigService],
     }),
+    HealthCheckModule,
   ],
 })
 export class AppModule {}
