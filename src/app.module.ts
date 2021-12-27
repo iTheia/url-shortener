@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HealthCheckModule } from './modules/health-check/health-check.module';
+import { ShortenerModule } from './modules/shortener/shortener.module';
 import config from './config';
 
 @Module({
@@ -12,6 +13,7 @@ import config from './config';
       inject: [ConfigService],
     }),
     HealthCheckModule,
+    ShortenerModule,
   ],
 })
 export class AppModule {}

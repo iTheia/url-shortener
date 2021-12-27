@@ -15,7 +15,8 @@
     "paths": {
       "@config/*": ["src/config/*"],
       "@middlewares/*": ["src/middlewares/*"],
-      "@modules/*": ["src/modules/*"]
+      "@modules/*": ["src/modules/*"],
+      "@const/*": ["src/const/*"]
     }
   }
 }
