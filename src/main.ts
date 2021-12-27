@@ -27,5 +27,6 @@ async function bootstrap() {
   app.use(bodyParser.urlencoded({ limit: '200mb', extended: true }));
 
   app.useGlobalPipes(new ValidationPipe());
+  app.listen(config.get('port'));
 }
 bootstrap();

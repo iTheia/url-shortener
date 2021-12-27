@@ -1,9 +1,11 @@
+import { NoProd } from '@middlewares/decorators';
 import { Controller, Get } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import * as fs from 'fs';
 import { HelloWorldResponseDto, VersionResponseDto } from './dto';
 
 @ApiTags('Additional Endpoints')
+@NoProd()
 @Controller('')
 export class HealthCheckController {
   @ApiOperation({ summary: 'Endpoint que dice la version de la api' })

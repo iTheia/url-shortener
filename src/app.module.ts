@@ -6,7 +6,7 @@ import config from './config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ load: config }),
+    ConfigModule.forRoot({ load: config, cache: false, isGlobal: true }),
     TypeOrmModule.forRootAsync({
       useFactory: (config: ConfigService) => config.get('database-main'),
       inject: [ConfigService],
